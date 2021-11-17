@@ -45,6 +45,65 @@ void display(void) {
 
     glEnd();
 
+    //windows
+    //left
+    glBegin(GL_LINE_LOOP);
+
+    glVertex2d(-4, -4);
+    glVertex2d(-4, -2);
+
+    glVertex2d(-4, -2);
+    glVertex2d(-2, -2);
+
+    glVertex2d(-2, -2);
+    glVertex2d(-2, -4);
+
+    glVertex2d(-2, -4);
+    glVertex2d(-4, -4);
+    glEnd();
+
+    //right
+    glBegin(GL_LINE_LOOP);
+
+    glVertex2d(2, -4);
+    glVertex2d(2, -2);
+
+    glVertex2d(2, -2);
+    glVertex2d(4, -2);
+
+    glVertex2d(4, -2);
+    glVertex2d(4, -4);
+
+    glVertex2d(4, -4);
+    glVertex2d(2, -4);
+
+    glEnd();
+
+    //grills on window
+    //left
+    glBegin(GL_LINES);
+
+    glVertex2d(-3, -2);
+    glVertex2d(-3, -4);
+
+    glVertex2d(-4, -3);
+    glVertex2d(-2, -3);
+
+    glEnd();
+
+    //right
+    glBegin(GL_LINES);
+
+    glVertex2d(3, -2);
+    glVertex2d(3, -4);
+
+    glVertex2d(4, -3);
+    glVertex2d(2, -3);
+
+    glEnd();
+
+    glFlush();
+
 }
 int main(int argc, char** argv)
 
@@ -52,7 +111,7 @@ int main(int argc, char** argv)
     glutInit(&argc, argv);
     glutInitWindowSize(700, 700);
     glutInitWindowPosition(0, 50);
-    glutCreateWindow("2D-house");
+    glutCreateWindow("2D house");
     glutDisplayFunc(display);
     init();
     glutMainLoop();
