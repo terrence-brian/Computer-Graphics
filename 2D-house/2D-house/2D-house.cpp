@@ -45,6 +45,8 @@ void display(void) {
 
     glEnd();
 
+    glFlush();
+
 }
 int main(int argc, char** argv)
 
@@ -52,7 +54,7 @@ int main(int argc, char** argv)
     glutInit(&argc, argv);
     glutInitWindowSize(700, 700);
     glutInitWindowPosition(0, 50);
-    glutCreateWindow("2D-house");
+    glutCreateWindow("2D house");
     glutDisplayFunc(display);
     init();
     glutMainLoop();
