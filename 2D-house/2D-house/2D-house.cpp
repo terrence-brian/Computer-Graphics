@@ -102,6 +102,43 @@ void display(void) {
 
     glEnd();
 
+    //crecent
+
+    int a = 7;
+    int b = 7;
+    GLfloat twicePI = 2.0f * 3.14;
+    int i;
+    int radiuse = 1.5;
+
+    int numbere = 30;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1.0, 0.5, 0.0);
+
+    glVertex2f(a, b);
+    for (i = 0; i <= numbere; i++) {
+        glVertex2f(
+            a + (radiuse * cos(i * twicePI / numbere)),
+            b + (radiuse * sin(i * twicePI / numbere))
+        );
+    }
+    glEnd();
+
+    float u = 7.5;
+    float v = 7.0;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1.0, 1.0, 1.0);
+
+    glVertex2f(u, v);
+    for (i = 0; i <= numbere; i++) {
+        glVertex2f(
+            u + (radiuse * cos(i * twicePI / numbere)),
+            v + (radiuse * sin(i * twicePI / numbere))
+        );
+    }
+    glEnd();
+
     glFlush();
 
 }
