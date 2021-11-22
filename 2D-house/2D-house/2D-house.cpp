@@ -102,12 +102,44 @@ void display(void) {
 
     glEnd();
 
-    //crecent
 
+    //dome
+    float radius = 4;
+    float twoPI = 2 * 3.14;
+
+    glBegin(GL_POINTS);
+
+    for (float i = 0.0; i <= twoPI / 2; i += 0.001)
+        glVertex2f((cos(i) * radius), (sin(i) * radius) + 3);
+
+    glEnd();
+
+    //door knob
+    int i;
+
+    GLfloat x = .8f;
+    int y = -6;
+    GLfloat radiuss = .1f;
+
+    int number = 100;
+
+    GLfloat twicePI = 2.0f * 3.14;
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(0.0, 0.0, 1.0);
+
+    glVertex2f(x, y);
+    for (i = 0; i <= number; i++) {
+        glVertex2f(
+            x + (radiuss * cos(i * twicePI / number)),
+            y + (radiuss * sin(i * twicePI / number))
+        );
+    }
+    glEnd();
+
+    //crecent
     int a = 7;
     int b = 7;
-    GLfloat twicePI = 2.0f * 3.14;
-    int i;
     int radiuse = 1.5;
 
     int numbere = 30;
@@ -138,7 +170,6 @@ void display(void) {
         );
     }
     glEnd();
-
     glFlush();
 
 }
